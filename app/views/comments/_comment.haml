@@ -1,0 +1,12 @@
+.comment.clearfix
+  .comment-left.float-left.d-inline-block
+    %strong= comment.user.nickname
+    %small #{time_ago_in_words(comment.created_at)} 전
+  .comment-right.float-right.d-inline-block
+    - if (can? :update, comment) && comment.user == current_user
+      = link_to (fa_icon "edit"), edit_activity_comment_path(comment.activity, comment), class: "btn btn-link btn-sm text-secondary"
+    - if can? :destroy, comment
+      = link_to (fa_icon "trash"), [comment.activity, comment], method: :delete, data: { confirm: "정말로 삭제하시겠습니까?" }, class: "btn btn-link btn-sm text-danger"
+  %br/
+  = comment.content
+%hr

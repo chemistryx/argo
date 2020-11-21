@@ -1,0 +1,10 @@
+= simple_form_for([@activity, @activity.comments.build]) do |f|
+  .form-group
+    - if user_signed_in?
+      = f.text_area :content, class: "form-control"
+      %br/
+      = f.button :submit, class: "btn btn-rounded btn-primary"
+    - else
+      = f.text_area :content, class: "form-control", disabled: "disabled"
+      %br/
+      = f.button :submit, "로그인 후 등록하기", class: "btn btn-rounded btn-primary", disabled: "disabled"

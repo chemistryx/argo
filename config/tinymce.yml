@@ -1,0 +1,9 @@
+height: 500
+toolbar: undo redo | forecolor | bold italic | alignleft aligncenter alignright | code | link | image | table |
+plugins:
+  - link
+  - image
+  - textcolor
+  - code
+  - table
+skin: oxide-dark

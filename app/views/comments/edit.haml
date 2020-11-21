@@ -1,0 +1,9 @@
+- content_for(:title) { "댓글 수정" }
+.clearfix
+  %h1.content-title.float-left.d-inline-block 댓글 수정
+  = link_to "취소", activity_path(@activity), class: 'btn btn-rounded btn-default float-right d-inline-block'
+= simple_form_for([@activity, @comment]) do |f|
+  .form-group
+    = f.text_area :content, class: "form-control"
+    %br/
+    = f.button :submit, class: "btn btn-rounded btn-primary"

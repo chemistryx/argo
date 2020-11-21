@@ -1,0 +1,18 @@
+ko:
+  activerecord:
+    attributes:
+      user:
+        nickname: "닉네임"
+    errors:
+      models:
+        activity:
+          attributes:
+            content:
+              blank: "내용은 공백일 수 없습니다."
+            title:
+              blank: "제목은 공백일 수 없습니다."
+              too_long: "제목은 60자를 넘을 수 없습니다."
+        comment:
+          attributes:
+            content:
+              blank: "내용은 공백일 수 없습니다."

@@ -1,0 +1,23 @@
+- content_for(:title) { @activity.title }
+.content.clearfix
+  .content-title-left.float-left.d-inline-block
+    %span.content-title= @activity.title
+    .desc-wrapper
+      %small #{fa_icon "user"} #{@activity.user.nickname}
+      %small= @activity.created_at.strftime("%Y-%m-%d %H:%M")
+  .content-title-right.float-right.d-inline-block
+    - if (can? :update, @activity) && @activity.user == current_user
+      = link_to (fa_icon "edit"), edit_activity_path(@activity), class: 'btn btn-link text-secondary'
+    - if can? :destroy, @activity
+      = link_to (fa_icon "trash"), activity_path(@activity), class: 'btn btn-link text-danger', method: :delete, data: { confirm: "정말로 삭제하시겠습니까?" }
+.content
+  %p= @activity.content.html_safe
+  %br/
+  = link_to "목록", activities_path, class: 'btn btn-rounded btn-primary'
+%hr/
+
+.content
+  %h2.content-title #{@activity.comments.count}개의 댓글 
+  = render @activity.comments
+
+  = render 'comments/form'

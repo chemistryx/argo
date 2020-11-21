@@ -1,0 +1,6 @@
+- content_for(:title) { "게시물 작성" }
+.clearfix
+  %h1.content-title.float-left.d-inline-block 게시물 작성
+  = link_to "취소", activities_path, class: 'btn btn-rounded btn-default float-right d-inline-block'
+
+= render 'form'

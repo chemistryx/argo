@@ -1,0 +1,19 @@
+.sidebar
+  .sidebar-menu
+    %a(href=root_path class='sidebar-brand')
+      = image_tag 'logo.svg', class: 'h-50 hidden-lm'
+      = image_tag 'logo-dark.svg', class: 'h-50 hidden-dm'
+    .sidebar-content
+      - if user_signed_in?
+        .my-10.font-size-12
+          %strong #{current_user.nickname}님 환영합니다.
+        %a(href=edit_user_registration_path class='btn btn-rounded btn-sm btn-default mr-5') 마이페이지
+        %a(rel='nofollow' data-method='delete' href=destroy_user_session_path class='btn btn-rounded btn-sm btn-primary') 로그아웃
+      - else
+        %a(href=user_session_path class='btn btn-rounded btn-sm btn-primary mr-5') 로그인
+        %a(href=new_user_registration_path class='btn btn-rounded btn-sm btn-default') 회원 가입
+    %a(href=about_path class='sidebar-link #{current_page?(about_path) ? "active" : nil}') 소개
+    .sidebar-divider
+    %a(href=activities_path class='sidebar-link #{current_page?(activities_path) ? "active" : nil}') 활동
+    .sidebar-divider
+    %a(href="#" class='sidebar-link') 뉴스

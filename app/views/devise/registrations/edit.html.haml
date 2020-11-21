@@ -1,0 +1,34 @@
+- content_for(:title) { "마이페이지" }
+%h2.content-title= t(".title", resource: resource.model_name.human)
+= devise_error_messages!
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  .form-group
+    = f.label :email, required: "required"
+    = f.email_field :email, class: "form-control"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email)
+  .form-group
+    = f.label :nickname, required: false
+    .form-text
+      = t(".leave_blank_if_you_don_t_want_to_change_it")
+    = f.text_field :nickname, class: "form-control"
+  .form-group
+    = f.label :password, required: false
+    .form-text
+      = t(".leave_blank_if_you_don_t_want_to_change_it")
+    = f.password_field :password, class: "form-control"                                    
+  .form-group       
+    = f.label :password_confirmation, required: false
+    = f.password_field :password_confirmation, class: "form-control"
+  .form-group
+    = f.label :current_password, required: "required"
+    .form-text
+      = t(".we_need_your_current_password_to_confirm_your_changes")
+    = f.password_field :current_password, class: "form-control"      
+  .form-actions
+    = f.button :submit, t(".update"), class: "btn btn-primary"
+%h3.content-title.mt-15= t(".cancel_my_account")
+%p= t(".unhappy")
+%p 회원 탈퇴를 하면 본인이 작성한 모든 게시물 및 댓글이 자동으로 삭제됩니다.
+%p= link_to t(".cancel_my_account"),registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete, class: "btn btn-danger"
+= link_to t("devise.shared.links.back"), :back, class: "btn btn-default"

@@ -1,0 +1,11 @@
+- content_for(:title) { "활동" }
+.clearfix
+  %h1.content-title.font-size-22.float-left.d-inline-block 활동
+  - if user_signed_in?
+    = link_to "새 게시물", new_activity_path, class: 'btn btn-rounded btn-primary float-right d-inline-block', 'data-no-turbolink' => true
+- @activities.each do |a|
+  .card
+    %h2.card-title= link_to a.title, a, class: "align-middle"
+    %span.text-muted
+      #{fa_icon "comment"} #{a.comments.count} | #{time_ago_in_words(a.created_at)} 전 | #{fa_icon "user"} #{a.user.nickname}
+

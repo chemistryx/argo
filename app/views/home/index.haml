@@ -1,0 +1,9 @@
+%h2.content-title 최근 활동
+.row.row-eq-spacing
+  - @activities.each do |a|
+    .col-sm-6.col-md-5.col-lg-4
+      .card
+        %h2.card-title
+          = link_to a.title, a
+        %span.text-muted #{fa_icon "user"} #{a.user.nickname}
+%h2.content-title 최근 뉴스

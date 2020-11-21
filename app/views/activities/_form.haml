@@ -1,0 +1,13 @@
+- if @activity.errors.any?
+  = @activity.errors.full_messages.each do |message|
+    .alert.alert-danger.filled.mb-10= message
+  %br/
+= simple_form_for @activity do |f|
+  .form-group
+    = f.label "제목"
+    = f.text_field :title, class: "form-control", required: true
+    %br/
+    = f.text_area :content, class: "form-control tinymce", rows: 10
+    %br/
+    = f.button :submit, class: "btn btn-rounded btn-primary"
+= tinymce :language => "ko_KR"

@@ -1,0 +1,10 @@
+%nav.navbar.justify-content-between
+  .navbar-content
+    %button.btn.hidden-md-and-up(onclick="halfmoon.toggleSidebar()")
+      %span.sr-only Toggle sidebar
+      = fa_icon "bars"
+  %a(href=root_path class='navbar-brand')
+    = image_tag 'logo.svg', class: "hidden-lm"
+    = image_tag 'logo-dark.svg', class: "hidden-dm"
+  .navbar-content
+    %button.invisible dummy
