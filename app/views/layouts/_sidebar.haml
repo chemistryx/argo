@@ -17,3 +17,8 @@
     %a(href=activities_path class='sidebar-link #{current_page?(activities_path) ? "active" : nil}') 활동
     .sidebar-divider
     %a(href="#" class='sidebar-link') 뉴스
+    - if user_signed_in? && current_user.admin?
+      .sidebar-divider
+      %a(href=rails_admin_path class='sidebar-link' target='_blank')
+        %b 사이트 관리자
+
