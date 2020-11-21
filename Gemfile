@@ -22,6 +22,7 @@ gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'devise-i18n'
 gem 'cancancan'
 gem 'rolify'
+gem 'rails_admin'
 
 gem 'haml', '~> 5.1', '>= 5.1.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'

@@ -13,7 +13,7 @@
     = stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap', media: 'all', 'data-turbolinks-track' => 'reload'
     = stylesheet_link_tag    'application', 'https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css', media: 'all'
   %body.dark-mode
-    .page-wrapper.with-sidebar.with-navbar.with-transitions(data-sidebar-type="full-height overlayed-sm-and-down" data-sidebar-hidden="hidden-sm-and-down")
+    .page-wrapper.with-sidebar.with-navbar.with-transitions(data-sidebar-type="full-height overlayed-sm-and-down")
       = render "layouts/navbar"
       .sidebar-overlay(onclick="halfmoon.toggleSidebar()")
       = render "layouts/sidebar"
