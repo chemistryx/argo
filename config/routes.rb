@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :activities do
     resources :comments
   end
+  resources :news
 
   root to: 'home#index'
   get '/about', to: 'about#index'

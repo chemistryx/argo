@@ -8,4 +8,3 @@
     %h2.card-title= link_to a.title, a, class: "align-middle"
     %span.text-muted
       #{fa_icon "comment"} #{a.comments.count} | #{time_ago_in_words(a.created_at)} 전 | #{fa_icon "user"} #{a.user.nickname}
-
