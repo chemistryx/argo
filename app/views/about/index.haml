@@ -1,3 +1,30 @@
 - content_for(:title) { "소개" }
 %h1.content-title.font-size-22 소개
-= image_tag 'logo.svg'
+.d-flex
+  %h3.content-title.flex-grow-1 안녕하세요 저희는 과천고등학교 자율동아리 Deep Learning입니다.
+  = image_tag 'logo.svg', class: "w-150"
+%p 저희 자율동아리는 프로그래밍 언어를 공부하여 웹사이트를 제작하였습니다.
+%p 또한 물리학 I 과목을 공부한 뒤 다양한 문제를 풀어 제작한 웹사이트에 문제의 풀이법을 작성하고 있습니다.
+%h1.content-title 개발 환경
+%a(href="https://code.visualstudio.com/" target="_blank")
+  = image_tag 'vscode.png', class: "w-50"
+%h1.content-title 사용 프로그램 및 기술
+.row.row-eq-spacing-sm.justify-content-center
+  .col
+    %a(href="https://rubyonrails.org/" target="_blank")
+      = image_tag 'rails.png', class: "w-100"
+  .col
+    %a(href="https://capistranorb.com/" target="_blank")
+      = image_tag 'capistrano.png', class: "w-150"
+  .col
+    %a(href="https://github.com/" target="_blank")
+      = image_tag 'github.png', class: "w-100"
+  .col
+    %a(href="https://www.gethalfmoon.com/" target="_blank")
+      = image_tag 'halfmoon.svg', class: "w-150"
+%h1.content-title 오픈 소스
+%p
+  이 웹사이트는 오픈 소스로
+  %a(href="https://github.com/ghs-deeplearning/argo" target="_blank") Deep Learning Github 저장소
+  에 게시되어 있습니다.
+  
